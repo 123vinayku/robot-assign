@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from 'react';
-import Grid from './components/grid'
-import PlaceForm from './components/place'
+import Grid from '../components/grid'
+import PlaceForm from '../components/place'
 
 export default function Home() {
 

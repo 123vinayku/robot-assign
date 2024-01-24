@@ -1,17 +1,19 @@
 "use client"
 import { useState } from "react";
 
+const INITIAL_FORM_VALUES = {
+    placeX: 0,
+    placeY: 0,
+    face: 'SOUTH'
+}
+
 export default function PlaceForm(props: {
     rows: number;
     columns: number;
     submitEvent: (arg0: { placeX: number; placeY: number; face: string; }) => void;
 }) {
 
-    const [formValues, setFormValues] = useState({
-        placeX: 0,
-        placeY: 0,
-        face: 'SOUTH'
-    });
+    const [formValues, setFormValues] = useState(INITIAL_FORM_VALUES);
     const handleChange = (e: { target: { id: any; value: any; }; }) => {
         setFormValues({ ...formValues, [e.target.id]: e.target.value });
     };
