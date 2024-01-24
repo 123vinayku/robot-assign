@@ -16,18 +16,113 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html {
+  width: 100%;
+  height: 100%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+}
+
+.container-grid {
+  display: grid;
+  grid-gap: 2px;
+  justify-content: center;
+  width: 100%;
+}
+
+.container-grid .item:nth-child(even) {
+  background-color: #CCC
+}
+
+.container-grid .item:nth-child(odd) {
+  background-color: #4D4D4D
+}
+
+.container-grid .item.selected-item {
+  background-image: url('../../public/robot.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}
+
+.container-grid .item.selected-item.south {
+  transform: rotate(0deg);
+}
+
+.container-grid .item.selected-item.west {
+  transform: rotate(90deg);
+}
+
+.container-grid .item.selected-item.north {
+  transform: rotate(180deg);
+}
+
+.container-grid .item.selected-item.east {
+  transform: rotate(270deg);
+}
+
+.placeContainer {
+  width: 300px;
+}
+
+.placeContainer form .input-group {
+  margin-bottom: 10px;
+}
+
+.placeContainer form .input-group label {
+  display: block;
+  font-size: 12px;
+}
+
+.placeContainer form .input-group input,
+.placeContainer form .input-group select {
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 4px;
+  height: 30px;
+}
+
+.placeContainer form .input-group input {
+  padding: 10px;
+}
+
+.placeContainer form .btn-ct {
+  text-align: center;
+}
+
+.placeContainer form .btn-ct .submit-btn {
+  width: 80%;
+  font-size: 14px;
+  text-align: center;
+  background-color: aquamarine;
+  height: 30px;
+  border-radius: 4px;
+}
+
+.action-ct {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-top: 15px;
+  padding-bottom: 20px;
+}
+
+.command-ct .left,
+.command-ct .right,
+.command-ct .report {
+  width: 80%;
+  font-size: 14px;
+  text-align: center;
+  background-color: cadetblue;
+  height: 30px;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
